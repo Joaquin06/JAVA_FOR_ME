@@ -5,6 +5,8 @@
  */
 package pe.egcc.model;
 
+import com.sun.xml.internal.bind.v2.runtime.RuntimeUtil;
+
 /**
  *
  * @author Alumno
@@ -16,6 +18,44 @@ public class Estudiante {
     private int edad;
     private boolean casado;
     private String email;
+
+    
+ 
+    
+    /*
+    Constructor por defecto
+    */
+
+    public Estudiante() {
+    
+        nombre="Gigo";
+        apellido="hhhhh";
+        edad=24;
+        email="mail@gmail.com";
+        casado=true;
+        
+      
+    }
+    
+       /*Constructor adicional*/
+    
+    public Estudiante(String nombre, String apellido, int edad, boolean casado, String email) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.casado = casado;
+        this.email = email;
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize(); //To change body of generated methods, choose Tools | Templates.
+            System.err.println("Chau objeto!!!");
+    }
+    
+    
+    
+    
 
     public String getNombre() {
         return nombre;
@@ -56,8 +96,27 @@ public class Estudiante {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
+    @Override
+    public String toString() {
     
+        String repo="";
+        
+        repo +="Nombre: " + nombre +"\n";
+        repo +="Apellido: " + apellido +"\n";
+        repo +="Email: " + email +"\n";
+        repo +="Edad: " + edad +"\n";
+        repo +="Estado: " + casado +"\n";
     
+        
+        
+        return repo; //To change body of generated methods, choose Tools | Templates.
+    }
+    
+   
+    
+  
     
     
 }
